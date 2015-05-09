@@ -1,5 +1,5 @@
 // First git exchange
-//change
+//changes
 package com.java.training;
 
 public class Arrays {
