@@ -10,7 +10,7 @@ public class Arrays {
 		PrintArray();
 	}	
 	public void CreateArrays(){
-		System.out.println("Random Number:" + rand);
+		System.out.println("Output Random Number:" + rand);
 		for(int i=0; i < arraySize; i++){
 			int localRand = (int)((Math.random()*45));
 			noramalArray[i]= localRand;
