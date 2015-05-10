@@ -1,6 +1,4 @@
-//change
 package com.java.training;
-
 
 public class MainJava {
 
@@ -8,7 +6,6 @@ public class MainJava {
 		// TODO Auto-generated method stub
 		Arrays arrays = new Arrays();
 		arrays.Main();
-
 	}
 
 }
