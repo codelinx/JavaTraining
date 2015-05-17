@@ -64,23 +64,32 @@ public class Arrays {
 		System.out.println("What Value Would you like to search? ");
 		int value = input.nextInt();
 		if (value <= arraySize && isFalse) {
-			System.out.println("Is '" + value + "' the value you want to search? ");
+			System.out.println("Is '" + value
+					+ "' the value you want to search? ");
 			checkDecision = input.next();
 			System.out.println(checkDecision);
 			System.out.println("First If");
 			if ((checkDecision.equals("yes")) || (checkDecision.equals("y"))) {
 				System.out.println("If");
 				return value;
-			} else if ((checkDecision.equals("no")) || (checkDecision.equals("n"))) {
+			} else if ((checkDecision.equals("no"))
+					|| (checkDecision.equals("n"))) {
 				System.out.println("What Value Would you like to search? ");
 				System.out.println("Else");
 				value = input.nextInt();
 			}
-		}else if(value > arraySize) {
-			System.out.println("What Value Would you like to search? ");
-			value = input.nextInt();
-			System.out.println("Is '" + value + "' the value you want to search? ");
-			checkDecision = input.next();
+		} else if (value > arraySize) {
+			System.out.println("Value " + value + " > Array Size " + arraySize);
+			do {
+				System.out.println("What Value Would you like to search? ");
+				value = input.nextInt();
+				System.out.println("Is '" + value
+						+ "' the value you want to search? ");
+				checkDecision = input.next();
+				if(value < arraySize){
+					System.out.println("While check.");
+						isFalse = false;}
+			}while (isFalse);
 		}
 		return 0;
 	}
