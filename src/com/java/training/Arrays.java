@@ -4,17 +4,17 @@ import java.util.Scanner;
 
 public class Arrays {
 	private static int[] normalArray = new int[10];
-	private static int rand = (int) ((Math.random()*10));
+	private static int rand = (int) ((Math.random() * 10));
 	private static int arraySize = rand;
 
 	public static void Main() {
 		System.out.println("Main start ...");
-		CreateArrays();
-		GetValue();
-		PrintArray();
+		createArrays();
+		getValue();
+		printArray();
 	}
 
-	public static void PrintArray() {
+	public static void printArray() {
 		System.out.println("|-------|-------|");
 		System.out.println("| Index | Value |");
 		for (int i = 0; i < arraySize; i++) {
@@ -39,7 +39,7 @@ public class Arrays {
 		System.out.println("|-------|-------|");
 	}
 
-	public static void CreateArrays() {
+	public static void createArrays() {
 		System.out.println("Output Random Number:" + rand);
 		for (int i = 0; i < arraySize; i++) {
 			int localRand = (int) ((Math.random() * 10));
@@ -47,83 +47,146 @@ public class Arrays {
 			normalArray[i] = localRand;
 			// System.out.println(noramalArray[i]);
 		}
-		// PrintArray();
+		// printArray();
 	}
 
-	public static int SearchValueAtIndex(int searchIndex) {
+	public static int searchValueAtIndex(int searchIndex) {
 		if (searchIndex < arraySize) {
-			System.out.println("The value in index ["+ searchIndex +"] is: " + normalArray[searchIndex]);
-//			return normalArray[searchIndex];
+			System.out.println("The value in index [" + searchIndex + "] is: "
+					+ normalArray[searchIndex]);
+			// return normalArray[searchIndex];
 			return 1;
 		}
 		return 0;
 	}
 
-	public static int GetValue() {
+	public static int getValue() {
 		@SuppressWarnings("resource")
 		Scanner input = new Scanner(System.in);
-//		String checkDecision = null;
-//		boolean isFalse = true;
+		// String checkDecision = null;
+		// boolean isFalse = true;
 		System.out.println("What index Would you like to search? ");
 		int value = input.nextInt();
-		SearchValueAtIndex(value);
-		SearchValueInArray(value);
-		BubbleSortArray(value);
-		
-//		if (value <= arraySize && isFalse) {
-//			System.out.println("Is '" + value
-//					+ "' the value you want to search? ");
-//			checkDecision = input.next();
-//			System.out.println(checkDecision);
-//			System.out.println("First If");
-//			if ((checkDecision.equals("yes")) || (checkDecision.equals("y"))) {
-//				System.out.println("If");
-//				return value;
-//			} else if ((checkDecision.equals("no"))
-//					|| (checkDecision.equals("n"))) {
-//				System.out.println("What Value Would you like to search? ");
-//				System.out.println("Else");
-//				value = input.nextInt();
-//			}
-//		} else if (value > arraySize) {
-//			System.out.println("Value " + value + " > Array Size " + arraySize);
-//			do {
-//				System.out.println("What Value Would you like to search? ");
-//				value = input.nextInt();
-//				System.out.println("Is '" + value
-//						+ "' the value you want to search? ");
-//				checkDecision = input.next();
-//				if(value < arraySize){
-//					System.out.println("While check.");
-//						isFalse = false;}
-//			}while (isFalse);
-//		}
+		searchValueAtIndex(value);
+		searchValueInArray(value);
+//		BubbleSortArray(value);
+
+		// if (value <= arraySize && isFalse) {
+		// System.out.println("Is '" + value
+		// + "' the value you want to search? ");
+		// checkDecision = input.next();
+		// System.out.println(checkDecision);
+		// System.out.println("First If");
+		// if ((checkDecision.equals("yes")) || (checkDecision.equals("y"))) {
+		// System.out.println("If");
+		// return value;
+		// } else if ((checkDecision.equals("no"))
+		// || (checkDecision.equals("n"))) {
+		// System.out.println("What Value Would you like to search? ");
+		// System.out.println("Else");
+		// value = input.nextInt();
+		// }
+		// } else if (value > arraySize) {
+		// System.out.println("Value " + value + " > Array Size " + arraySize);
+		// do {
+		// System.out.println("What Value Would you like to search? ");
+		// value = input.nextInt();
+		// System.out.println("Is '" + value
+		// + "' the value you want to search? ");
+		// checkDecision = input.next();
+		// if(value < arraySize){
+		// System.out.println("While check.");
+		// isFalse = false;}
+		// }while (isFalse);
+		// }
 		return 0;
 	}
 
-	public static void SearchValueInArray(int searchValue) {
-		for (int i = 0; i < arraySize; i++) {			
-			if (searchValue == normalArray[i]){
-				System.out.print("Binary search " + normalArray[i]+". ");
+	public static void searchValueInArray(int searchValue) {
+		for (int i = 0; i < arraySize; i++) {
+			if (searchValue == normalArray[i]) {
+				System.out.print("Binary search " + normalArray[i] + ". ");
 				System.out.println("The value in index [" + searchValue
 						+ "] is: " + normalArray[searchValue]);
-			}else{
-				System.out.println("The value '" + searchValue+"' is not in the array.");
+			} else {
+				System.out.println("The value '" + searchValue
+						+ "' is not in the array.");
 			}
 		}
 	}
-	
-	public static int[] BubbleSortArray(int searchValue){
-		int passedValue = 0;
-		for (int i = 0; i < arraySize; i++) {			
-			if (normalArray[i] < normalArray[i+1]){
-				passedValue = normalArray[i];
-			}else{
-				System.out.println("The value '" + searchValue+"' is not in the array.");
+
+	// public static int[] BubbleSortArray(int searchValue){
+	// int passedValue = 0;
+	// for (int i = 0; i < arraySize; i++) {
+	// if (normalArray[i] < normalArray[i+1]){
+	// passedValue = normalArray[i];
+	// }else{
+	// System.out.println("The value '" + searchValue+"' is not in the array.");
+	// }
+	// }
+	// printArray();
+	// return normalArray;
+	// }
+
+	private void bubbleSortWhile() {
+
+		System.out.println("|-------|-------|");
+		System.out.println("|--Bubble Sort--|");
+		System.out.println("|-------|-------|");
+
+		int temp;
+		boolean isFalse = true;
+		while (isFalse) {
+			isFalse = false;
+			for (int i = 0; i < arraySize; i++) {
+				if (normalArray[i] > normalArray[i + 1]) {
+					temp = normalArray[i];
+					normalArray[i] = normalArray[i + 1];
+					normalArray[i + 1] = temp;
+					isFalse = true;
+				}
 			}
 		}
-		PrintArray();
-		return normalArray;
+
+		// boolean swapped = true;
+		// int j = 0;
+		// int tmp;
+		// while (swapped) {
+		// swapped = false;
+		// j++;
+		// for (int i = 0; i < normalArray.length - j; i++) {
+		// if (normalArray[i] > normalArray[i + 1]) {
+		// tmp = normalArray[i];
+		// normalArray[i] = normalArray[i + 1];
+		// normalArray[i + 1] = tmp;
+		// swapped = true;
+		// }
+		// }
+		// }
+
+		printArray();
+	}
+
+	private void bubbleSort2For() {
+
+		System.out.println("|-------|-------|");
+		System.out.println("|--Bubble Sort--|");
+		System.out.println("|-------|-------|");
+
+		int temp;
+		boolean isFalse = true;
+
+		for (int i = 0; i < arraySize; i++) {
+			for (int j = 0; j < arraySize; j++) {
+				if (normalArray[i] > normalArray[i + 1]) {
+					temp = normalArray[i];
+					normalArray[i] = normalArray[i + 1];
+					normalArray[i + 1] = temp;
+					isFalse = true;
+				}
+			}
+		}
+		printArray();
 	}
 
 }
