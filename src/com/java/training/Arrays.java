@@ -3,18 +3,18 @@ package com.java.training;
 import java.util.Scanner;
 
 public class Arrays {
-	private int[] normalArray = new int[10];
-	private int rand = (int) ((Math.random()*10));
-	private int arraySize = rand;
+	private static int[] normalArray = new int[10];
+	private static int rand = (int) ((Math.random()*10));
+	private static int arraySize = rand;
 
-	public void Main() {
+	public static void Main() {
 		System.out.println("Main start ...");
 		CreateArrays();
 		GetValue();
 		PrintArray();
 	}
 
-	public void PrintArray() {
+	public static void PrintArray() {
 		System.out.println("|-------|-------|");
 		System.out.println("| Index | Value |");
 		for (int i = 0; i < arraySize; i++) {
@@ -39,7 +39,7 @@ public class Arrays {
 		System.out.println("|-------|-------|");
 	}
 
-	public void CreateArrays() {
+	public static void CreateArrays() {
 		System.out.println("Output Random Number:" + rand);
 		for (int i = 0; i < arraySize; i++) {
 			int localRand = (int) ((Math.random() * 10));
@@ -50,7 +50,7 @@ public class Arrays {
 		// PrintArray();
 	}
 
-	public int SearchValueAtIndex(int searchIndex) {
+	public static int SearchValueAtIndex(int searchIndex) {
 		if (searchIndex < arraySize) {
 			System.out.println("The value in index ["+ searchIndex +"] is: " + normalArray[searchIndex]);
 //			return normalArray[searchIndex];
@@ -59,7 +59,7 @@ public class Arrays {
 		return 0;
 	}
 
-	public int GetValue() {
+	public static int GetValue() {
 		@SuppressWarnings("resource")
 		Scanner input = new Scanner(System.in);
 //		String checkDecision = null;
@@ -68,6 +68,7 @@ public class Arrays {
 		int value = input.nextInt();
 		SearchValueAtIndex(value);
 		SearchValueInArray(value);
+		BubbleSortArray(value);
 		
 //		if (value <= arraySize && isFalse) {
 //			System.out.println("Is '" + value
@@ -100,7 +101,7 @@ public class Arrays {
 		return 0;
 	}
 
-	public void SearchValueInArray(int searchValue) {
+	public static void SearchValueInArray(int searchValue) {
 		for (int i = 0; i < arraySize; i++) {			
 			if (searchValue == normalArray[i]){
 				System.out.print("Binary search " + normalArray[i]+". ");
@@ -112,16 +113,17 @@ public class Arrays {
 		}
 	}
 	
-	public void BubbleSortArray(int searchValue){
+	public static int[] BubbleSortArray(int searchValue){
+		int passedValue = 0;
 		for (int i = 0; i < arraySize; i++) {			
-			if (searchValue == normalArray[i]){
-				System.out.print("Binary search " + normalArray[i]+". ");
-				System.out.println("The value in index [" + searchValue
-						+ "] is: " + normalArray[searchValue]);
+			if (normalArray[i] < normalArray[i+1]){
+				passedValue = normalArray[i];
 			}else{
 				System.out.println("The value '" + searchValue+"' is not in the array.");
 			}
 		}
+		PrintArray();
+		return normalArray;
 	}
 
 }
